@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand mb-0 h1" routerLink="/">NOTE</a>
+  <button (click)="onCollapse()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [@collapse]="collapse" class="navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a *ngIf="authenticated" class="nav-link" routerLink="/manage">Manage</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/manage/edit">Add Note</a>
+      </li>
+    </ul>
+    <div *ngIf="!authenticated">
+      <a class="btn btn-outline-success my-2  mr-2 my-sm-0" routerLink="login">Login</a>
+      <a class="btn btn-success my-2 my-sm-0" routerLink="signup">Signup</a>
+    </div>
+    <div *ngIf="authenticated">
+      <button class="btn btn-outline-success my-2" (click)="onLogout()">Logout</button>
+    </div>
+    
+  </div>
+</nav>
+
+<app-breadcrumb></app-breadcrumb>

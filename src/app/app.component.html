@@ -1,0 +1,6 @@
+<app-header></app-header>
+<main [@fade]="myOutlet.isActivated && myOutlet.activatedRoute">
+	<router-outlet #myOutlet="outlet"></router-outlet>
+</main>
+
+

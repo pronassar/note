@@ -1,0 +1,13 @@
+<section class="my-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+					<input type="text" placeholder="Title" class="form-control" formControlName="title">
+					<textarea placeholder="Description" class="form-control mt-2" formControlName="desc"></textarea>
+					<button type="submit" class="btn btn-success mt-3">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

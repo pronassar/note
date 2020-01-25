@@ -1,0 +1,17 @@
+
+.mt-70,.my-70 {
+	margin-top: 70px;
+}
+
+.mb-70,.my-70 {
+	margin-bottom: 70px;
+}
+
+main > * {
+	position: absolute;
+	width: 100%;
+}
+
+.color-gray {
+	color: var(--gray)
+}

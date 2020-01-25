@@ -1,0 +1,26 @@
+<section class="my-70">
+  <div class="container">
+    <div class="alert alert-info not-fixed mb-4" [class.d-none]="notesLength != 0">No notes, start add your notes</div>
+    <button class="btn btn-success mb-3" (click)="onAdd()">Add New</button>
+    <table class="table table-striped" [class.d-none]="notesLength == 0">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Note Title</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of (notesState | async).notes; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{note?.title}}</td>
+          <td>
+            <button class="btn btn-primary mr-2 my-2 my-md-0" (click)="onBrowse(i, note?.title)">Browse</button>
+            <button class="btn btn-warning mr-2 my-2 my-md-0" (click)="onEdit(i, note?.title)">Edit</button>
+            <button class="btn btn-danger my-2 my-md-0" (click)="onRemove(note.id)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
